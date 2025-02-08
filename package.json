@@ -1,0 +1,20 @@
+{
+  "name": "insurance-claims-processing-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "merge": "jrm results.xml target/surefire-reports/*.xml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bytenode": "^1.5.6",
+    "junit-report-merger": "^6.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "xml-js": "^1.6.11"
+  }
+}
