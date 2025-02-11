@@ -9,7 +9,7 @@ import { HttpService } from '../../services/http.service';
   templateUrl: './update-claim-investigator.component.html',
   styleUrls: ['./update-claim-investigator.component.scss']
 })
-export class UpdateClaimInvestigatorComponent 
+export class UpdateClaimInvestigatorComponent {
 //todo: complete missing code..
   
 }
