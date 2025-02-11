@@ -4,6 +4,7 @@ package com.wecp.insurance_claims_processing_system.controller;
 import com.wecp.insurance_claims_processing_system.entity.Claim;
 import com.wecp.insurance_claims_processing_system.service.ClaimService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,8 @@ public class PolicyholderController {
 
     @PostMapping("/api/policyholder/claim")
     public ResponseEntity<Claim> submitClaim(@RequestParam Long policyholderId, @RequestBody Claim claim) {
-        Claim submittedClaim = claimService.submitClaim(policyholderId, claim);
-        return ResponseEntity.ok(submittedClaim);
+        return new ResponseEntity<Claim>(claimService.submitClaim(policyholderId, claim), HttpStatus.CREATED);
+        
     }
 
     @GetMapping("/api/policyholder/claims")

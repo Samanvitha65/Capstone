@@ -1,3 +1,93 @@
-<div class="row text-center">
-<h1 class="text-capitalize">Insurance Claims & Resource Management Platform</h1>
-</div>
+  <div class="dashboard-container">
+ <header class="dashboard-header">
+ <h1>Insurance Claims Management Dashboard</h1>
+ </header>
+  
+   <div class="dashboard-actions">
+ <button (click)="navigateToCreateClaim()" class="action-button">
+       Create New Claim
+ </button>
+ <button (click)="navigateToAssignClaim()" class="action-button">
+       Assign Claim
+ </button>
+ <button (click)="navigateToUpdateClaim()" class="action-button">
+       Update Claim
+ </button>
+ <button (click)="navigateToCreateInvestigator()" class="action-button">
+       Create Investigation
+ </button>
+ </div>
+  
+   <div class="dashboard-content">
+ <!-- Claims Section -->
+ <section class="dashboard-section">
+ <h2>Recent Claims</h2>
+ <div class="table-container">
+ <table>
+ <thead>
+ <tr>
+ <th>ID</th>
+ <th>Description</th>
+ <th>Date</th>
+ <th>Status</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let claim of claims">
+ <td>{{claim.id}}</td>
+ <td>{{claim.description}}</td>
+ <td>{{claim.date | date}}</td>
+ <td>{{claim.status}}</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+  
+     <!-- Investigations Section -->
+ <section class="dashboard-section">
+ <h2>Active Investigations</h2>
+ <div class="table-container">
+ <table>
+ <thead>
+ <tr>
+ <th>ID</th>
+ <th>Report</th>
+ <th>Status</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let investigation of investigations">
+ <td>{{investigation.id}}</td>
+ <td>{{investigation.report}}</td>
+ <td>{{investigation.status}}</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+  
+     <!-- Underwriters Section -->
+ <section class="dashboard-section">
+ <h2>Available Underwriters</h2>
+ <div class="table-container">
+ <table>
+ <thead>
+ <tr>
+ <th>ID</th>
+ <th>Name</th>
+ <th>Status</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let underwriter of underwriters">
+ <td>{{underwriter.id}}</td>
+ <td>{{underwriter.name}}</td>
+ <td>{{underwriter.status}}</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+ </div>
+ </div>

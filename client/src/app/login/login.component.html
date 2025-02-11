@@ -1,1 +1,42 @@
-//todo: complete missing code..
+  <div class="container">
+   <h2>Login</h2>
+  
+   <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+       <label for="username">Username</label>
+       <input
+         type="text"
+         id="username"
+         formControlName="username"
+         class="form-control"
+         placeholder="Enter your username"
+       />
+       <div *ngIf="itemForm.get('username')?.touched && itemForm.get('username')?.invalid" class="error-message">
+         Username is required
+       </div>
+     </div>
+  
+     <div class="form-group">
+       <label for="password">Password</label>
+       <input
+         type="password"
+         id="password"
+         formControlName="password"
+         class="form-control"
+         placeholder="Enter your password"
+       />
+       <div *ngIf="itemForm.get('password')?.touched && itemForm.get('password')?.invalid" class="error-message">
+         Password is required
+       </div>
+     </div>
+  
+     <button type="submit" [disabled]="!itemForm.valid" class="submit-button">
+       Login
+     </button>
+     <button type="button" (click)="onSignUp()">Signup</button>
+  
+     <button type="button" (click)="onCreate()">claim creation</button>
+     <button [routerLink]="['/dashboard']">Dashboard</button>
+  
+   </form>
+ </div>

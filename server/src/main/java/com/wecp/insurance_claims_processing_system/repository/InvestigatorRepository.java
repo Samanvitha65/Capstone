@@ -4,6 +4,6 @@ import com.wecp.insurance_claims_processing_system.entity.Investigator;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
-public interface InvestigatorRepository  {
+@Repository
+public interface InvestigatorRepository extends JpaRepository<Investigator, Long>  {
 }

@@ -1,1 +1,36 @@
-//todo: complete missing code..
+  <div class="container">
+   <h2>Create Investigation Report</h2>
+  
+   <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+       <label for="report">Investigation Report</label>
+       <textarea
+         id="report"
+         formControlName="report"
+         class="form-control"
+         rows="4"
+         placeholder="Enter detailed investigation report"
+       ></textarea>
+       <div *ngIf="itemForm.get('report')?.touched && itemForm.get('report')?.invalid" class="error-message">
+         Please enter the investigation report
+       </div>
+     </div>
+  
+     <div class="form-group">
+       <label for="status">Status</label>
+       <select id="status" formControlName="status" class="form-control">
+         <option value="">Select status</option>
+         <option value="Pending">Pending</option>
+         <option value="In Progress">In Progress</option>
+         <option value="Completed">Completed</option>
+       </select>
+       <div *ngIf="itemForm.get('status')?.touched && itemForm.get('status')?.invalid" class="error-message">
+         Please select a status
+       </div>
+     </div>
+  
+     <button type="submit" [disabled]="!itemForm.valid" class="submit-button">
+       Create Investigation
+     </button>
+   </form>
+ </div>
