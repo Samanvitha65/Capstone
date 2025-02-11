@@ -1,0 +1,87 @@
+{
+  "environment": [
+    {
+      "base": "custom",
+      "prebuild-location": "./prebuild.sh",
+      "test": {
+        "location": ".",
+        "command": "rm -rf ./output-frontend.xml && npm run test",
+        "xml_output_file": "./output-frontend.xml",
+        "total_testcases": 19,
+        "test_file_or_folder": "src/tests"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Run App",
+      "command": "npm run start",
+      "type": "shell"
+    },
+    {
+      "label": "Submit App",
+      "command": "./resolv.sh",
+      "type": "shell"
+  }
+  ],
+  "solutions": {
+    "addcargo.component.ts": "./src/app/addcargo/addcargo.component.ts",
+    "addcargo.component.html": "./src/app/addcargo/addcargo.component.html",
+    "assgin-cargo.component.ts": "./src/app/assgin-cargo/assgin-cargo.component.ts",
+    "assgin-cargo.component.html": "./src/app/assgin-cargo/assgin-cargo.component.html",
+    "viewcargostatus.component.ts": "./src/app/viewcargostatus/viewcargostatus.component.ts",
+    "viewcargostatus.component.html": "./src/app/viewcargostatus/viewcargostatus.component.html",
+    "login.component.ts": "./src/app/login/login.component.ts",
+    "login.component.html": "./src/app/login/login.component.html",
+    "http.service.ts": "./src/services/http.service.ts",
+    "auth.service.ts": "./src/services/auth.service.ts",
+    "app.component.html": "./src/app/app.component.html",
+    "registration.component.ts": "./src/app/registration/registration.component.ts",
+    "registration.component.html": "./src/app/registration/registration.component.html"
+  },
+  "submission": "./src/app",
+  "testcases": {
+    "HttpService should assign driver to cargo": "HttpService should assign driver to cargo",
+    "HttpService should fetch cargo": "HttpService should fetch cargo",
+    "HttpService should login": "ProfessorListComponent should fetch professors on ngOnInit",
+    "HttpService should update cargo status": "HttpService should update cargo status", 
+    "HttpService should register user": "HttpService should register user",
+    "HttpService should fetch driver": "HttpService should fetch driver",  
+    "HttpService should get assigned orders for driver":"HttpService should get assigned orders for driver",
+    "HttpService should add cargo":"HttpService should add cargo",
+    "HttpService should fetch order status":"HttpService should fetch order status",
+    "HttpService should be created":"HttpService should be created",
+    "LoginComponent should have invalid form if username or password is empty":"LoginComponent should have invalid form if username or password is empty",
+    "LoginComponent should have valid form if username and password are provided":"LoginComponent should have valid form if username and password are provided",
+    "LoginComponent should have invalid form if username and password are empty":"LoginComponent should have invalid form if username and password are empty",
+    "AddcargoComponent should have invalid form if any field is empty":"AddcargoComponent should have invalid form if any field is empty",
+    "AddcargoComponent should have valid form if all fields are filled":"AddcargoComponent should have valid form if all fields are filled",
+    "RegistrationComponent should have invalid form if email is invalid":"RegistrationComponent should have invalid form if email is invalid",
+    "RegistrationComponent should have valid form if all fields are filled correctly":"RegistrationComponent should have valid form if all fields are filled correctly",
+    "RegistrationComponent should have invalid form if any field is empty":"RegistrationComponent should have invalid form if any field is empty"
+  },
+  "wecp-projects-extention-tabs": [
+    {
+      "name": "Start app",
+      "type": "task",
+      "props": {
+        "name": "Run App"
+      }
+    },
+    {
+      "name": "Open browser preview",
+      "type": "simple-browser",
+      "props": {
+        "port": "5000",
+        "relativeUrl": "/"
+      }
+    },
+    {
+      "name": "Test & Submit app",
+      "type": "task",
+      "props": {
+        "name": "Submit App"
+      }
+    }
+  ]
+}
